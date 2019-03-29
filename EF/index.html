@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style_2.css">
+    <link rel="stylesheet" type="text/css" href="css/style_3.css">
+
 		<title>CachePoisoning</title>
 
 	</head>
@@ -13,50 +14,82 @@
 			<li><a class="active" href="./index.html">DNS Cache Poisoning</a></li>
 			<li><a href="./abwehrmethode.html">Abwehrmethoden</a></li>
   		<li><a href="./Beispiel.html">Beispiel</a></li>
-			<li><a href="#about">Glossar & Literaturverzeichnis</a></li>
+			<li><a href="./glossar.html">Glossar & Verzeichnisse</a></li>
 
 		</ul>
 		<article>
+
+
+
 			<h1>DNS Cache Poisoning</h1>
 			<h3>Domain Name System (DNS):</h3>
-			<p>Um eine Verbindung mit einem am Internet angeschlossenen Gerät aufzubauen, wird eine eindeutige IP-Adressen verwendet.
-				Da für Menschen diese numerischen IP-Adressen zu umständlich und schwierig zu merken sind, hat man Domains wie beispielsweise
-				www.google.com eingeführt. Mit diesen kann ein Benutzer z.B. in einem Webbrowser eine Verbindung mit einem Server aufbauen.
+			<p>Um eine Verbindung mit einem am Internet angeschlossenen Gerät aufzubauen,
+				wird eine eindeutige IP-Adressen verwendet. Da für Menschen diese numerischen IP-Adressen
+				zu umständlich und schwierig zu merken sind, hat man Domains wie beispielsweise www.google.com
+				eingeführt. Mit diesen kann ein Benutzer z.B. in einem Webbrowser eine Verbindung mit einem
+				Server aufbauen.
 				<br><br>
-				Für einen Computer ist es allerdings viel einfacher mit numerischen Daten zu arbeiten und so muss schlussendlich für eine
-				erfolgreiche Verbindung z.B. mit einer Website die jeweilige Domain in eine IP-Adresse übersetzt werden. Diese Übersetzungen werden
-				im „Telefonbuch des Internets“ oder Domain Name System (DNS) nachgeschlagen. Für die Namensauflösung sind mehrere Nameserver zuständig.
+				Für einen Computer ist es allerdings viel einfacher mit numerischen Daten zu arbeiten und so
+				muss schlussendlich für eine erfolgreiche Verbindung z.B. mit einer Website die jeweilige
+				Domain in eine IP-Adresse übersetzt werden. Diese Übersetzungen werden im „Telefonbuch des
+				Internets“ oder Domain Name System (DNS) nachgeschlagen. Für die Namensauflösung sind
+				mehrere <a href="./glossar.html#Nameserver">Nameserver</a> zuständig. <a href="./glossar.html#link1">[01]</a>
 			</p>
 			<br>
+
+			<div class="pic" >
+				<img src="recursive-resolver.png" alt="DNS" style="width:100%;">
+				<div class="text">
+					<p><a href="./glossar.html#Abbildung 1">Abbildung 1:</a> DNS-Resolver</p>
+				</div>
+			</div>
 			<h3>Übersetzung einer Domain</h3>
-			<p>Wenn eine Domain in eine IP-Adresse übersetzt werden sollte, wird als erstes eine Anfrage, ein sogenannter DNS-request, an den
-				DNS-Resolver geschickt. Falls diese Domain kurz zuvor schon einmal übersetzt wurde, hat der DNS-Resolver die passende IP-Adresse
-				in seinem Cache abgespeichert und kann diese dann auch sofort zurückschicken.
-				<br><br>
-				Im anderen Fall sendet der DNS-Resolver eine DNS-request an einen sogenannten DNS-Root-Server. Dieser leitet den DNS-Resolver basierend
-				auf der Top Level Domain (.de, .com., .org etc.), kurz TLD, an einen TLD-Nameserver. Dieser wiederum leitet den DNS-Resolver an einen
-				Autoritativen Nameserver. In diesem Nameserver steht dann die Übersetzung der Domain in die IP-Adresse.
-				<br><br>
-				Der ganze oben beschriebene Prozess des Nachschlagens braucht natürlich Zeit und aus diesem Grund verwendet der DNS-Resolver einen Cache,
-				um bei einem erneuten Aufruf einer Domain Zeit zu sparen.<a class=quote href="https://www.cloudflare.com/learning/dns/dns-server-types/#recursive-resolver">[03]</a>
-			</p>
+			<p>Wenn eine Domain in eine IP-Adresse übersetzt werden sollte, wird als erstes eine Anfrage,
+				 ein sogenannter <a href="./glossar.html#DNS-request">DNS-request</a>, an den <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a>DNS-
+				 geschickt (1).
+				 <br><br>
+				 Im zweiten Schritt sendet der <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> <a href="./glossar.html#DNS-request">DNS-request</a> an einen sogenannten
+				 <a href="./glossar.html#DNS-Root-Nameserver">DNS-Root-Nameserver</a> (2). Dieser leitet den <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> basierend auf der
+				 <a href="./glossar.html#Top-Level-Domain">Top Level Domain</a> an einen <a href="./glossar.html#TLD-Nameserver">TLD-Nameserver</a> (3,4).
+				 Der <a href="./glossar.html#TLD-Nameserver">TLD-Nameserver</a> leitet den <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> aufgrund der <a href="./glossar.html#Second-Level-Domain">Second Level Domain</a>
+				 an einen <a href="./glossar.html#Autoritativen Nameserver">Autoritativen Nameserver</a> (5,6). In diesem Nameserver steht dann die IP-Adresse für
+				 die Domain (7). Diese wird dann vom <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> im letzten Schritt weitergeleitet (8).
+				 <br><br>
+				 Der ganze oben beschriebene Prozess des Nachschlagens braucht natürlich Zeit und aus
+				 diesem Grund verwendet der <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> einen <a href="./glossar.html#DNS-Server-Cache">Cache</a>. In diesem <a href="./glossar.html#DNS-Server-Cache">Cache</a> werden kürzlich
+				 nachgeschlagene Domains und die jeweiligen IP-Adressen in sogenannten Einträgen zusammen
+				 abgespeichert. So kann ein <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> bei einem erneuten <a href="./glossar.html#DNS-request">DNS-request</a> für eine kürzlich
+				 nachgeschaute Domain direkt antworten und so Zeit sparen. <a href="./glossar.html#link2">[02]</a>	</p>
 			<br>
+
 			<h3>DNS Cache Poisoning</h3>
 			<p>
-				Falls es einem Angreifer gelingt, einen falschen Eintrag in den Cache des DNS-Resolvers einzubauen, spricht man von DNS Cache Poisoning.
-				Das führt dazu, dass der DNS-Resolver eine falsche IP-Adresse zurückgibt, die in einem Angriffsfall dem Angreifer gehört. Dies kann dann
-				bedeuten, dass wenn man z.B. www.google.com in den Browser eingibt, nicht auf den Google Server kommt, sondern auf einen anderen Server
-				und	so auf eine andere Website. Diese Website kann frei vom Angreifer gestaltet werden, wobei häufig ein Virus oder Computerwurm des
-				Angreifers auf den Computer des Opfers geladen wird.
-				<br><br>
-				Auch kann DNS Cache Poisoning für Phishing verwendet werden. Dabei wird das Opfer auf eine Website weitergeleitet, welche die Echte
-				imitiert. So erhofft sich der Angreifer, an Bankinformationen oder Kreditkartenformationen zu kommen. In den meisten Fällen merkt
-				der User, solange die böswillige Seite echt aussieht, gar nicht, dass er sich nicht auf der echten Website befindet, da im Browser
-				die echte Domain steht. [03]
-				<br><br>
-				Die Chinesische Firewall verwendet DNS Cache Poisoning in einem grösseren Umfang. Die Cashes der DNS-Resolver in China haben
-				absichtlich falsche Einträge drin, um Websites wie www.twitter.com in ganz China zu blockieren. [04]
-			<p>
+				<div class="pic" >
+					<img src="dns-cache-poisoned.svg" alt="DNS Cache Poisoning" style="width:100%;">
+					<div class="text">
+						<p><a href="./glossar.html#Abbildung 2">Abbildung 2:</a> DNS Cache Poisoning</p>
+					</div>
+				</div>
+				Falls es einem Angreifer gelingt, einen falschen Eintrag in den <a href="./glossar.html#DNS-Server-Cache">Cache</a> des
+				<a href="./glossar.html#DNS-Resolver">DNS-Resolvers</a> einzubauen,spricht man von DNS Cache Poisoning. Das führt dazu, dass der
+			  <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> eine falsche IP-Adresse zurückgibt, die in einem Angriffsfall dem Angreifer
+				gehört. Dies kann dann bedeuten, dass wenn man z.B. www.google.com in den Browser eingibt,
+				nicht auf den Google Server kommt, sondern auf einen anderen Server und so auf eine andere
+				Website.<br><br>
+				Diese Website kann frei vom Angreifer gestaltet werden, wobei häufig ein Virus oder
+				Computerwurm des Angreifers auf den Computer des Opfers heruntergeladen wird. Auch kann DNS
+				Cache Poisoning für Phishing verwendet werden. Dabei wird das Opfer auf eine Website
+				weitergeleitet, welche die Echte imitiert. So erhofft sich der Angreifer, an Bank- oder
+				Kreditkartenformationen zu kommen. In den meisten Fällen merkt der User, solange die
+				böswillige Seite echt aussieht, gar nicht, dass er sich hierbei nicht um die echte Website
+				handelt, da im Browser die richtige Domain steht. <a href="./glossar.html#link3">[03]</a><br><br>
+				Die Chinesische <a href="./glossar.html#Firewall">Firewall</a> verwendet DNS Cache Poisoning in einem grösseren Umfang. Die <a href="./glossar.html#DNS-Server-Cache">Caches</a>
+				der <a href="./glossar.html#DNS-Resolver">DNS-Resolver</a> in China beinhalten absichtlich falsche Einträge, um eine Website wie
+				www.twitter.com in ganz China zu blockieren.<a href="./glossar.html#link4">[04]</a>
+		<p>
+			<br class="big">
+			<br class="big">
+			<br>
 
 			<button class="button" onclick="window.location.href='./abwehrmethode.html'" style="float: right;"><span>Nächste Seite</span></button>
 

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style_2.css">
+    <link rel="stylesheet" type="text/css" href="css/style_3.css">
 		<title>CachePoisoning</title>
 
 	</head>
@@ -13,19 +13,25 @@
 			<li><a href="./index.html">DNS Cache Poisoning</a></li>
 			<li><a class="active" href="./abwehrmethode.html">Abwehrmethoden</a></li>
   		<li><a href="./Beispiel.html">Beispiel</a></li>
-			<li><a href="#about">Glossar & Literaturverzeichnis</a></li>
+			<li><a href="./glossar.html">Glossar & Verzeichnisse</a></li>
 
 		</ul>
+
 		<article>
 			<h1>Abwehrmethoden</h1>
-				<p>Wenn der Cache-Poisoning-Angriff sauber durchgeführt wird, kann ein normaler Nutzer wenig tun, um sich zu schützen. Ein fehlerhafter Eintrag auf einem DNS-Server kann nur von seinem Besitzer korrigiert werden, sonst muss man die TTL (=time to live) des fehlerhaften Cache-Eintrags abwarten und hoffen, dass dieser dann durch den richtigen ersetzt wird. [05]<br><br>
-Aber auch der Serverbesitzer hat wenig Optionen. Ein DNS-Server ist von anderen abhängig, weil dieser alleine nie alle IP-Adressen in seinem Speicher hat. Das ist problematisch, weil man auf komplett fremde Server vertrauen muss, die Informationen, die sie uns geben, sind ausserdem schwer zu kontrollieren. Grundsätzlich muss die Serversoftware immer aktuell gehalten werden und das Betriebssystem des Servers soll so abgespeckt wie möglich sein. Eine einfache Firewall ist immer empfehlenswert. [06]<br><br>
-Diese Ansätze reduzieren das Risiko, dass ein DNS-Server direkt «gehackt» wird, indem ein Angreifer eine Sicherheitslücke ausnutzt und danach Zugriff auf den DNS-Cache erhält.<br><br>
-Eine langfristige Lösung bietet DNSSEC. Dabei handelt es sich um ein Konzept, welches das gesamte DNS-System signieren will. Mithilfe von einem asymmetrischen Schlüsselsystem werden alle autoritativen Nameserver [07] von einem höherstehenden Server verifiziert, so dass man nur noch auf die Rootserver vertrauen muss. Kann ein Server bzw. sein Public Key validiert werden, dann darf dieser benutzt werden, um einen DNS-Request zu entschlüsseln. [08]<br><br>
-Die Rootserver unterstützen DNSSEC bereits seit 2010, die Verbreitung des Sicherheitssystems erfolgt jedoch relativ langsam. Problematisch ist, dass plötzlich eine Vielzahl an kryptografischen Schlüsseln umhergeschickt werden müssen, was mit einer allgemein höheren Auslastung des DNS-Systems verbunden ist. [09]<br><br>
+				<p>Wenn der Cache-Poisoning-Angriff sauber durchgeführt wird, kann ein normaler Nutzer wenig tun, um sich zu schützen. Ein fehlerhafter Eintrag auf einem <a href="./glossar.html#DNS-Server">DNS-Server</a> kann nur von seinem Besitzer korrigiert werden, sonst muss man die TTL (=time to live) des fehlerhaften <a href="./glossar.html#DNS-Server-Cache">Cache</a>-Eintrags abwarten und hoffen, dass dieser dann durch den richtigen ersetzt wird. <a href="./glossar.html#link5">[05]</a>
+					<br><br>
+Aber auch der Serverbesitzer hat wenig Optionen. Ein <a href="./glossar.html#DNS-Server">DNS-Server</a> ist von anderen abhängig, weil dieser alleine nie alle IP-Adressen in seinem Speicher hat. Das ist problematisch, weil man auf komplett fremde Server vertrauen muss, die Informationen, die sie uns geben, sind ausserdem schwer zu kontrollieren. Grundsätzlich muss die Serversoftware immer aktuell gehalten werden und das Betriebssystem des Servers soll so abgespeckt wie möglich sein. Eine einfache Firewall ist immer empfehlenswert. <a href="./glossar.html#link6">[06]</a>
+<br><br>
+Diese Ansätze reduzieren das Risiko, dass ein <a href="./glossar.html#DNS-Server">DNS-Server</a> direkt «gehackt» wird, indem ein Angreifer eine Sicherheitslücke ausnutzt und danach Zugriff auf den DNS-
+ erhält.<br><br>
+Eine langfristige Lösung bietet DNSSEC. Dabei handelt es sich um ein Konzept, welches das gesamte DNS-System signieren will. Mithilfe von einem <a href="./glossar.html#Asymmetrisches Schlüsselsystem">asymmetrischen Schlüsselsystem</a> werden alle <a href="./glossar.html#Autoritativen Nameserver">Autoritativen Nameserver</a> <a href="./glossar.html#link7">[07]</a> von einem höherstehenden Server verifiziert, so dass man nur noch auf die Rootserver vertrauen muss. Kann ein Server bzw. sein Public Key validiert werden, dann darf dieser benutzt werden, um einen DNS-Request zu entschlüsseln. <a href="./glossar.html#link8">[08]</a>
+<br><br>
+Die Rootserver unterstützen DNSSEC bereits seit 2010, die Verbreitung des Sicherheitssystems erfolgt jedoch relativ langsam. Problematisch ist, dass plötzlich eine Vielzahl an kryptografischen Schlüsseln umhergeschickt werden müssen, was mit einer allgemein höheren Auslastung des DNS-Systems verbunden ist. <a href="./glossar.html#link9">[09]</a>
+<br><br>
 				</p>
 			<div>
-				<button class="button" style="float: right;" ><span>Nächste Seite</span></button>
+				<button class="button" onclick="window.location.href='./Beispiel.html'" style="float: right;" ><span>Nächste Seite</span></button>
 				<!--<button class="button" style="float: left;" onclick="window.location.href='./index.html'"><span>Letzte Seite</span></button>-->
 			</div>
 		</article>

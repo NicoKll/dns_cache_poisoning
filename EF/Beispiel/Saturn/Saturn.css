@@ -1,0 +1,256 @@
+/* Kleine Geräte */
+@media (max-width : 768px) {
+    
+    body {
+        background-image: url("milchstrasse.jpg");
+        color: bisque;
+        font-family: Arial, sans-serif;
+        font-size: 75%; /* 1em = 12 */
+        padding: 0;
+    }
+
+    #wrapper {
+        background-color: rgb(58,63,64);
+        font-size: 1em;
+        margin: 4em auto;
+        max-width: 40em;
+        padding: 1em;
+    }
+
+    header {
+        background-color: rgb(32,38,39);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        padding: 0.5em;
+    }
+
+    
+    ul {
+        list-style-type: none;
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
+    li {
+        background-color: rgb(32,38,39);
+        border: 5px solid black;
+        border-radius: 1.9em;
+        margin-top: 1em;
+        padding: 0.8em;
+        text-align: center;
+        width: auto;
+    }
+
+    li a {
+        color: bisque;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    li a:visited {
+        color: bisque;
+    }
+    
+    li:hover {
+        background-color: rgb(100,100,100);
+    }
+
+    hr { 
+        width: 95%; 
+        height: 0px;
+        border: 1px solid rgb(32,38,39);
+        margin: 0 auto;
+    }
+
+    figure {
+        width: 17em;
+        margin: 1.5em auto;
+    }
+    
+    figcaption {
+        text-align: center;
+        color: black;
+    }
+
+    img:hover {
+        transform: scale(1.5)rotate(35deg);
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+
+    caption {
+        caption-side: top;
+        text-align: left;
+        font-size: 1.5em;
+    }
+
+    td {
+        min-width: 150px;
+        font-size: 1.2em;
+    }    
+
+    section p {
+        font-size: 1.2em;
+    }
+    
+    footer {
+        background-color: rgb(32,38,39);
+        width: 100%;
+        font-size: 1.3em;
+    } 
+}
+
+/* Grössere Geräte */
+@media (min-width: 769px) {
+    body {
+    background-image: url("milchstrasse.jpg");
+    color: bisque;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+#wrapper {
+    background-color: rgb(58,63,64);
+    font-size: 1em;
+    margin: 4em auto;
+    padding: 1em;
+}
+
+header {
+    background-color: rgb(32,38,39);
+}
+
+h1 {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.clearfix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+li {
+    background-color: rgb(32,38,39);
+    border: 5px solid black;
+    text-align: center;
+}
+
+li a {
+    color: bisque;
+    text-decoration: none;
+}
+
+li a:visited {
+    color: bisque;
+}
+    
+li:hover {
+    background-color: rgb(100,100,100);
+}
+
+hr { 
+    width: 95%; 
+    height: 0px;
+    border: 1px solid rgb(32,38,39);
+    margin: 0 auto;
+    
+    
+}
+
+figure {
+    margin-right: 3em;
+}
+
+img:hover {
+    transform: scale(1.5)translate(4.5em, 1em)rotate(35deg);
+}
+
+table {
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+}
+
+td {
+    min-width: 150px;
+}    
+
+section {
+    font-size: 1.2em;
+}
+    
+footer {
+    background-color: rgb(32,38,39);
+    width: 100%;
+} 
+    body {
+        font-size: 93.75%; /* 1em = 15 */
+    }
+    
+    #wrapper {
+        width: 51.2em;
+    }
+    
+    li {
+        border-radius: 1em;
+        float: left;
+        margin: 1em 1.2em;
+        padding: 0.2em;
+        width: 6em;
+    }
+    
+    figure, footer, section, table {
+        float: left;
+    }
+    
+    .clearfix:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+

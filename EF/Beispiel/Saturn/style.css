@@ -1,0 +1,213 @@
+/* Kleine Geräte */
+@media (max-width : 768px) {
+    
+    body {
+        background-image: url("milchstrasse.jpg");
+        color: rgb(170,170,170);
+        font-family: Arial, sans-serif;
+        font-size: 75%; /* 1em = 12 */
+        margin: 0;
+    }
+    
+    #wrapper {
+        background-color: rgba(30,30,30,1);
+        margin: 4em auto;
+        max-width: 40em;
+        padding: 1em;
+    }
+
+    header {
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        padding: 0.5em;
+    }
+    
+    hr {
+        border-color: rgb(15,15,15);
+    }
+    
+    ul {
+        list-style: none inside;
+        padding-left: 0;
+    }
+    
+    li {
+        background: linear-gradient(black, gray);
+        margin-bottom: 1em;
+        padding: 0.8em;
+        text-align: center;
+    }
+    
+    li a {
+        color: rgb(177,177,177);
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+    
+    li:hover {
+        background: none;
+        background-color: black;
+    }
+    
+    figure {
+        margin: 1.5em auto;
+        width: 17em;
+    }
+    
+    figcaption {
+        color: rgb(80,80,80);
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+    
+    img:hover {
+        transform: scale(1.5)rotate(35deg);
+    }
+    
+    table {
+        border: 1px solid rgb(60,60,60);
+        border-radius: 1em;
+        margin: 0 auto 1em;
+        font-size: 1.2em;
+        padding: 1em;
+    }
+    
+    caption {
+        font-size: 1.6em;
+    }
+    
+    section p {
+        font-size: 1.2em;
+    }
+    
+    footer {
+        background: linear-gradient(black, gray);
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+    
+    footer a {
+        color: rgb(178,177,177);
+        text-decoration: none;
+    }
+    
+    footer:hover {
+        background: none;
+        background-color: black;
+    }
+    
+    footer img {
+        float: right;
+        transform: scale(0.8);
+    }
+}
+
+/* Grössere Geräte */
+@media (min-width : 769px) {
+    body {
+        background-image: url("milchstrasse.jpg");
+        color: rgb(170,170,170);
+        font-family: Arial, sans-serif;
+        font-size: 100%; /* 1em = 16 */
+        margin: 0;
+    }
+    
+    #wrapper {
+        background-color: rgba(30,30,30,0.8);
+        margin: 4em auto;
+        max-width: 50em;
+        padding: 1em;
+    }
+    
+    header {
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        padding: 0.5em;
+    }
+    
+    hr {
+        border-color: rgb(15,15,15);
+        clear: left;
+    }
+    
+    ul {
+        list-style: none inside;
+        padding-left: 3.8em;
+    }
+    
+    li {
+        background: linear-gradient(black, gray);
+        display: inline-block;
+        margin: 0.2em 1em 0.2em 0;
+        padding: 0.6em;
+        text-align: center;
+        width: 6.25em;
+    }
+    
+    li a {
+        color: rgb(177,177,177);
+        font-size: 1em;
+        text-decoration: none;
+    }
+    
+    li:hover {
+        background: none;
+        background-color: black;
+    }
+    
+    figure {
+        float: left;
+        margin-left: 3em;
+        width: 16em;
+    }
+    
+    figcaption {
+        color: rgb(80,80,80);
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    img:hover {
+        transform: scale(1.3)rotate(35deg);
+    }
+    
+    table {
+        border: 1px solid rgb(60,60,60);
+        border-radius: 1em;
+        font-size: 1.2em;
+        margin: 1em 2em;
+        padding: 1em;
+    }
+    
+    caption {
+        font-size: 1.6em;
+    }
+    
+    section p {
+        font-size: 1em;
+    }
+    
+    footer {
+        font-size: 1.2em;
+        padding: 0.5em;
+    }
+    
+    footer a {
+        color: rgb(178,177,177);
+    }
+    
+    footer img {
+        float: right;
+    }
+}

@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style_2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style_3.css">
 		<title>CachePoisoning</title>
 
 	</head>
@@ -13,29 +13,30 @@
 			<li><a href="./index.html">DNS Cache Poisoning</a></li>
 			<li><a href="./abwehrmethode.html">Abwehrmethoden</a></li>
   		<li><a class="active" href="./Beispiel.html">Beispiel</a></li>
-			<li><a href="#about">Glossar & Literaturverzeichnis</a></li>
+			<li><a href="./glossar.html">Glossar & Verzeichnisse</a></li>
 
 		</ul>
 
 		<article>
 			<h1>Beispiel für DNS cache poisoning attack</h1>
 			<p>
+
 				In diesem Beispiel wird erklärt, wie man ein DNS cache poisoning attack ausführt. Es ist auch unter
 				dem Namen DNS Spoofing bekannt. Dabei wird das Betriebssystem Kali Linux verwendet. Kali Linux ist eine
 				Debian basierte Linux-Distribution. Das Betriebssystem ist sehr geeignet für Angriffe auf andere Rechner.
 				Das Betriebssystem enthält einige hunderte vorinstallierte Pakete um Computer zu scannen und anzugreifen.
-				[10] Damit das Ganze funktioniert müssen beide (das Opfer und der Angreifer) im selben Netzwerk sein.
-				Da es sich um ein LAN oder WLAN angriff handelt muss der Angreifer und das Opfer dasselbe
-				Netzwerk-Gateway haben.
-
+				<a href="./glossar.html#link10">[10]</a> Damit das Ganze funktioniert müssen beide (das Opfer
+				und der Angreifer) im selben Netzwerk sein.Da es sich um ein LAN oder WLAN angriff handelt
+				muss der Angreifer und das Opfer dasselbe Netzwerk-Gateway haben.
+				<div class="pic">
+	  			<img src="Etter_conf_1.jpg" alt="Etter conf 1" style="width:100%;">
+	  			<div class="text">
+	  				<p><a href="./glossar.html#Abbildung 3">Abbildung 3:</a> Etter.conf Teil 1 [12]</p>
+	  			</div>
+				</div>
 				<br><br>
 			<!--<img src="denker.gif" width="70" height="137" align="top" alt="Denker">-->
-			<div class="pic">
-  			<img src="Etter_conf_1.jpg" alt="Etter conf 1" style="width:100%;">
-  			<div class="text">
-  				<p>Abbildung 1: Etter.conf Teil 1 [12]</p>
-  			</div>
-			</div>
+
 
 				<!--<img scr="paris.jpg" alt="Etter.conf File" style="float:right;" />-->
 				Als erstes muss man die Konfigurationsdatei des Ettercap Werkzeugs verändern. Ettercap ist eines
@@ -44,24 +45,137 @@
 				 In dem es sich selbst als «man in the middle» positioniert. Das ARP-Protokoll steht für Address
 				 Resolution Protocol und ist ein Protokoll welches die IP-Adresse zu einer MAC-Adresse ordnet. Im
 				 ARP-Protokoll befindet sich der ARP-cache. Dieser ARP-cache führt eine Liste von MAC-Adressen und
-				 ihre dazugehörenden IP-Adressen. [11] Als «man in the middle» kann Ettercap Daten zwischen den beiden
+				 ihre dazugehörenden IP-Adressen. <a href="./glossar.html#link11">[11]</a> Als «man in the middle» kann Ettercap Daten zwischen den beiden
 				 Objekten, welche miteinander kommunizieren, infizieren, verändern oder löschen. Dazu kommt noch, dass
 				 das Werkzeug Passwörter von Protokollen wie http, FTP, POP und SSH1 herausfinden. Ausserdem kann es
-				 falsche SSH Zertifikate für die HTTPS Abschnitte zur Verfügung stellen.
-			<br>
+				 falsche SSH Zertifikate für die HTTPS Abschnitte zur Verfügung stellen.<a href="./glossar.html#link12">[12]</a>
+				 <br>
+			 </p>
 
-			<div class="shell-wrap">
-  			<p class="shell-top-bar">Terminal</p>
-  				<ul class="shell-body">
-    				<li>nano nano /etc/ettercap/etter.conf</li>
-  				</ul>
-			</div>
-			<br><br><br><br>
+			 <p>
+				 Jetzt muss der Angreifer die Konfigurationsdatei öffnen in dem man dies in Terminal eingibt.
+				 <br>
+			 </p>
+			 <div class="shell-wrap">
+   			<p class="shell-top-bar">Terminal</p>
+   				<ul class="shell-body">
+     				<li>nano /etc/ettercap/etter.conf</li>
+   				</ul>
+ 			</div>
+				 <div class="pic">
+	   			<img src="Etter_conf_2.jpg" alt="Etter conf 2" style="width:100%;float:right;">
+	   			<div class="text">
+	   				<p><a href="./glossar.html#Abbildung 4">Abbildung 4:</a> Etter.conf Teil 2</p>
+	   			</div>
+	 			</div>
 
 
-				Daraufhin sollte man in der Datei die beiden Variabeln <b>ec_uid</b> und <b>ec_gid</b> auf null setzten.
 			<p>
-			<button class="button" onclick="window.location.href='./abwehrmethode.html'" style="float: right;"><span>Nächste Seite</span></button>
+				Daraufhin sollte man in der Datei die beiden Variabeln <b>ec_uid</b> und <b>ec_gid</b> auf
+				null setzten.
+			</P>
+
+			<p>
+				Als nächstes muss man runterscrollen bis zum Titel Linux. Dort muss man bei beiden Zeilen,
+				welche unterhalb des Satzes «if you use iptables» befinden, das Hash Zeichen entfernen.
+				Damit sind sie keine Kommentare mehr.
+
+
+				<br><br>
+				Danach öffnet man das Programm Ettercap, in dem man die untenstehende Zeile in den Terminal
+				eingibt. Durch diesen Befehl wird dann das Programm geöffnet. Dieses Programm wird dann
+				wie die Abbildung 5 ausehen.
+				<br>
+			</p>
+
+				<div class="shell-wrap">
+	  			<p class="shell-top-bar">Terminal</p>
+	  				<ul class="shell-body">
+	    				<li>ettercap –G</li>
+	  				</ul>
+				</div>
+
+
+			<p>Daraufhin muss man <b>Sniff</b> > <b>Unified sniffing…</b> > (das Interface, welches
+			 	mit dem Internet verbunden ist) > <b>OK</b> auswählen.  Um herauszufinden, welches
+				Interface mit dem Internet verbunden muss man einfach ifconfig in den Terminal eingeben.
+				Danach kann man sehen welches Interface eine IP-Adresse zurück gibt. Dann muss man
+				möglichst schnell auf <b>Start</b> > <b>Stop sniffing</b>, weil es automatisch das
+				Programm startete als wir auf <b>OK</b> drückten.
+				<br><br>
+				<div class="pic">
+	  			<img src="Ettercap.jpg" alt="Ettercap" style="width:100%;">
+	  			<div class="text">
+	  				<p><a href="./glossar.html#Abbildung 5">Abbildung 5:</a> Ettercap</p>
+	  			</div>
+				</div>
+				Jetzt wollen wir das Netzwerk für Ziele scannen, dies wird durch das Drücken auf <b>Hosts</b>
+				> <b>Scan</b> for hosts gemacht. Das kann ein bisschen Dauern. Wenn der Scan abgeschlossen
+				ist, sollte man auf <b>Hosts</b> und dann auf <b>Host</b> list drücken, um alle Ziele, welche
+				Ettercap fand, zusehen. Was man jetzt tut ist das Hinzufügen der Maschine des Opfers zu Ziel 1
+				und	das Netzwerk-Gateway zu Ziel 2. Jedoch müssen wir zuerst herausfinden wer man genau angreift.
+				Dies kann man mit Programm <b>nmap</b> machen. <b>Nmap</b> scannt den gegnerischen Rechner.
+				<b>Nmap</b> gibt uns die Informationen die wir brauchen. Wenn wir sicher sind, dass der
+				gescannte Rechner dem Opfer gehört, nimmt man die IP-Adresse des Opfers und fügt sie
+				im Ettercap zu Target 1 hinzu. Als nächstes braucht man die IP-Adresse des Netzwerk-Gateways.
+				Um diese herauszufinden muss man noch mal <i>ifconfig</i> im Terminal eingeben. Dort wo
+				dann <i>Bcast:</i> steht, steht die IP-Adresse des Gateways. Diese IP-Adresse sollte man dann
+				als Target 2 eingeben.
+				<br><br>
+				Da man jetzt beide Targets hat, ist der Moment gekommen um anzugreifen. Man muss zum <b>MITM</b>
+				Knopf gehen und dort <b>ARP poisoning</b> auswählen. In <b>ARP poisoning</b> sollte man die
+				Funktion <b>Sniff remote connections</b> aussuchen und <b>OK</b> drücken. Als nächstes geht
+				man zu <b>Plugins</b> > <b>Manage the plugins</b> und drückt doppelt auf <b>dns_spoof</b>.
+				<br><br>
+				Daraufhin sollte der Angreifer eine weitere Datei ändern. In dem er diesen Befehl im
+				Terminal ausführt öffnet er die Datei.
+				<br>
+			</p>
+				<div class="shell-wrap">
+	  			<p class="shell-top-bar">Terminal</p>
+	  				<ul class="shell-body">
+	    				<li>nano /etc/ettercap/etter.dns</li>
+	  				</ul>
+				</div>
+			<p>
+				<div class="pic">
+					<img src="Ettercap File.jpg" alt="Ettercap Programm" style="width:100%;">
+					<div class="text">
+						<p><a href="./glossar.html#Abbildung 6">Abbildung 6:</a> Ettercap File</p>
+					</div>
+				</div>
+				Die etter.dns Datei gehört dem Host und ist verantwortlich für das Umleiten von spezifischen
+				DNS Requests. Wenn zum Beispiel facebook.com in den Browser eingibt, wird man zur Webseite
+				von Facebook verbunden. Um jetzt das Opfer anzugreifen, würde man einen Apache Server vom
+				Kali Linux aus starten. Danach müsste man eine Webseite kopieren, zum Beispiel die Webseite
+				von Facebook. Diese würde dann auf dem Apache Server laufen. Jetzt müsste man innerhalb
+				der etter.dns Datei den Namen der Webseite und die eigene IP-Adresse eingeben. Im Fall,
+				dass das Opfer sich mit dieser Spezifischen Webseite verbinden würde, sieht er eine Webseite
+				die genau gleich aussieht als die, die er eigentlich sich verbinden möchte, jedoch befindet
+				er sich auf dem Apache Server des Angreifers.
+
+				<br><br>
+				Um jetzt den Apache Server zu starten muss man in der Command Line diesen Befehl eingeben.
+				<br>
+			 </p>
+				 <div class="shell-wrap" style="width:400px;">
+					 <p class="shell-top-bar">Terminal</p>
+						 <ul class="shell-body">
+							 <li>service apache2 start</li>
+						 </ul>
+				 </div>
+			 <p>
+				 	Jetzt soll man in das Verzeichnis /var/www/html gehen, dort befindet sich die Datei
+					index.html.  Diese index.html Datei ist die, welche der User der sich mit der
+					Webseite verbinden wird sieht. Das letzte was man tun muss ist zurück in das
+					Ettercap Programm gehen und dort <b>Start</b> > <b>Start sniffing</b> drücken, um den Angriff
+					zu starten.
+					<br><br>
+					Jetzt wird jedes Mal, wenn sich der User mit der Webseite verbindet, die etter.dns Datei
+					ausgeführt und deswegen wird er wieder auf die Fakewebseite geleitet.<a href="./glossar.html#link13">[13]</a>
+			 </p>
+
+			<button class="Home" onclick="window.location.href='./index.html'" style="float: right;"><span>Home</span></button>
 
 		</article>
 
